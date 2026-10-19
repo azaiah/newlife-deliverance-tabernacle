@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#1A0F2B" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" as="image" href="/video/hero-sanctuary-poster.jpg" fetchpriority="high" />
+    <!-- Fonts are self-hosted (see src/main.tsx) for speed and privacy -->
+
+    <!-- Link preview + SEO tags are generated at build time from site.config.json (see vite.config.ts). Do not hard-code the domain here. -->
+    <title>__PAGE_TITLE__</title>
+    <meta name="description" content="__PAGE_DESC__" />
+    <meta name="robots" content="__PAGE_ROBOTS__" />
+    <link rel="canonical" href="__PAGE_URL__" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="New Life Deliverance Tabernacle" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="__PAGE_URL__" />
+    <meta property="og:title" content="__PAGE_OG_TITLE__" />
+    <meta property="og:description" content="__PAGE_OG_DESC__" />
+    <meta property="og:image" content="__PAGE_IMAGE__" />
+    <meta property="og:image:secure_url" content="__PAGE_IMAGE__" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="__PAGE_IMAGE_ALT__" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="__PAGE_OG_TITLE__" />
+    <meta name="twitter:description" content="__PAGE_OG_DESC__" />
+    <meta name="twitter:image" content="__PAGE_IMAGE__" />
+    <meta name="twitter:image:alt" content="__PAGE_IMAGE_ALT__" />
+    <!-- Structured data: helps Google show the church's address, phone and service time -->
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"Church","name":"New Life Deliverance Tabernacle","url":"https://__SITE_HOST__/","logo":"https://__SITE_HOST__/icon-512.png","image":"https://__SITE_HOST__/og-image.png","telephone":"+1-804-233-2730","email":"900newlife@gmail.com","foundingDate":"1997","slogan":"Who the Son sets free is free indeed. John 8:36","address":{"@type":"PostalAddress","streetAddress":"900 Decatur Street","addressLocality":"Richmond","addressRegion":"VA","postalCode":"23224","addressCountry":"US"},"sameAs":["https://www.facebook.com/newlifenldt"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"11:00","closes":"16:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"11:00","closes":"13:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"09:45","closes":"14:00"}],"subOrganization":{"@type":"NGO","name":"New Life Community Center","taxID":"83-4614645","email":"newlifecomcenter@gmail.com"}}
+    </script>
+    <!-- Netlify's hashed deploy addresses (e.g. 6a1f2c--site.netlify.app) always forward to the main address -->
+    <script>(function(){var c='__SITE_HOST__',h=location.hostname;if(h!==c&&h.slice(-(c.length+2))==='--'+c&&h.indexOf('deploy-preview-')!==0){location.replace('https://'+c+location.pathname+location.search+location.hash)}})()</script>
+  </head>
+  <body>
+    <!-- Hidden static forms so Netlify Forms detects every field at build time -->
+    <form name="nldt-contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="text" name="email" />
+      <input type="text" name="phone" />
+      <input type="text" name="subject" />
+      <input type="text" name="kind" />
+      <input type="text" name="date" />
+      <textarea name="message"></textarea>
+      <textarea name="details"></textarea>
+      <input type="text" name="updates" />
+      <input type="text" name="consent" />
+      <input type="text" name="bot-field" />
+    </form>
+    <form name="nldt-prayer" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="text" name="phone" />
+      <input type="text" name="email" />
+      <textarea name="request"></textarea>
+      <input type="text" name="private" />
+      <input type="text" name="call" />
+      <input type="text" name="bot-field" />
+    </form>
+    <form name="nldt-help" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="type" />
+      <input type="text" name="name" />
+      <input type="text" name="phone" />
+      <input type="text" name="email" />
+      <input type="text" name="household" />
+      <input type="text" name="need" />
+      <textarea name="details"></textarea>
+      <input type="text" name="where" />
+      <input type="text" name="date" />
+      <input type="text" name="forwhat" />
+      <textarea name="notes"></textarea>
+      <input type="text" name="consent" />
+      <input type="text" name="bot-field" />
+    </form>
+    <form name="nldt-visit" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="type" />
+      <input type="text" name="name" />
+      <input type="text" name="email" />
+      <input type="text" name="phone" />
+      <input type="text" name="date" />
+      <input type="text" name="party" />
+      <textarea name="notes"></textarea>
+      <input type="text" name="consent" />
+      <input type="text" name="bot-field" />
+    </form>
+    <form name="nldt-volunteer" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="ministry" />
+      <input type="text" name="name" />
+      <input type="text" name="email" />
+      <input type="text" name="phone" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,762 @@
+[
+ {
+  "idx": 1,
+  "name": "logo-badge",
+  "alt": "New Life Deliverance Tabernacle emblem: a gold cross with radiating light",
+  "v": "v1767533323",
+  "id": "c8d961b4-1aee-456d-89be-6eb47286ce0f",
+  "ext": "png"
+ },
+ {
+  "idx": 0,
+  "name": "sanctuary-1",
+  "alt": "The sanctuary at 900 Decatur Street with rows of purple chairs",
+  "v": "v1767986640",
+  "id": "a97ce7b1-d978-459e-8a86-a35a8465cd58",
+  "ext": "jpg"
+ },
+ {
+  "idx": 11,
+  "name": "sanctuary-2",
+  "alt": "The sanctuary with its chandelier and stained glass windows",
+  "v": "v1767990288",
+  "id": "c750d9bb-8be5-4a5d-aafe-df23f94b1848",
+  "ext": "jpg"
+ },
+ {
+  "idx": 27,
+  "name": "sanctuary-3",
+  "alt": "Stained glass windows above the purple chairs in the sanctuary",
+  "v": "v1768412592",
+  "id": "1d387c55-3c60-4417-b34d-09298ec0ee5c",
+  "ext": "jpg"
+ },
+ {
+  "idx": 19,
+  "name": "worship-full-1",
+  "alt": "A full sanctuary during Sunday worship",
+  "v": "v1768240279",
+  "id": "0fb2b273-5463-493d-bfdb-814c63edab19",
+  "ext": "jpg"
+ },
+ {
+  "idx": 20,
+  "name": "worship-full-2",
+  "alt": "The congregation gathered for worship",
+  "v": "v1768241570",
+  "id": "be821314-f6b2-4101-b8ee-6c55f82f69cc",
+  "ext": "jpg"
+ },
+ {
+  "idx": 103,
+  "name": "worship-full-3",
+  "alt": "Members filling the sanctuary for a Sunday service",
+  "v": "v1771546024",
+  "id": "50ac536a-5968-4b5b-a0f8-5e70b0b4beb0",
+  "ext": "jpg"
+ },
+ {
+  "idx": 107,
+  "name": "worship-full-4",
+  "alt": "A packed sanctuary during a special service",
+  "v": "v1772042051",
+  "id": "677d93ba-689f-413a-94de-0461c2d54ebd",
+  "ext": "jpg"
+ },
+ {
+  "idx": 110,
+  "name": "praise-dance-1",
+  "alt": "Praise dancers ministering in white during worship",
+  "v": "v1772122505",
+  "id": "198f0b6a-159a-4900-8de8-cd35fecdd09f",
+  "ext": "jpg"
+ },
+ {
+  "idx": 111,
+  "name": "praise-dance-2",
+  "alt": "Praise dance ministry before the congregation",
+  "v": "v1772122538",
+  "id": "515a640e-54da-421c-8cb4-46805acc345c",
+  "ext": "jpg"
+ },
+ {
+  "idx": 113,
+  "name": "praise-dance-3",
+  "alt": "Praise dancer in the center aisle during worship",
+  "v": "v1772122716",
+  "id": "db800951-8993-4a49-830d-d278488af479",
+  "ext": "jpg"
+ },
+ {
+  "idx": 44,
+  "name": "praise-dance-4",
+  "alt": "Praise dancers ministering as the church worships",
+  "v": "v1768857621",
+  "id": "46ac02ab-9403-4a66-ab7f-93106cd6c5f8",
+  "ext": "jpg"
+ },
+ {
+  "idx": 74,
+  "name": "congregation-praise",
+  "alt": "Members lifting their hands in praise",
+  "v": "v1769738682",
+  "id": "39cff20b-8b65-4527-a23b-15bff0d96125",
+  "ext": "png"
+ },
+ {
+  "idx": 47,
+  "name": "pastors-robes-1",
+  "alt": "The pastors of New Life in white clergy robes",
+  "v": "v1768887905",
+  "id": "83e141ee-56c3-4085-a9c9-18ad1c523529",
+  "ext": "png"
+ },
+ {
+  "idx": 48,
+  "name": "pastors-robes-2",
+  "alt": "The pastors of New Life standing together in robes",
+  "v": "v1768887980",
+  "id": "acb7b940-5242-44e4-8a65-d6f77b8c7b57",
+  "ext": "jpg"
+ },
+ {
+  "idx": 75,
+  "name": "pastors-portrait",
+  "alt": "The pastors of New Life Deliverance Tabernacle",
+  "v": "v1769738854",
+  "id": "da9e898a-b5a5-489b-a467-5941083fc126",
+  "ext": "jpg"
+ },
+ {
+  "idx": 83,
+  "name": "pastors-closeup",
+  "alt": "The pastors of New Life smiling together",
+  "v": "v1769822155",
+  "id": "dac1623b-70a7-439f-bc2a-6bb881aefa17",
+  "ext": "jpg"
+ },
+ {
+  "idx": 89,
+  "name": "pastor-headshot-1",
+  "alt": "Portrait of a New Life pastor",
+  "v": "v1769901124",
+  "id": "bad32fda-c0f1-438c-8781-e6e08ff2892a",
+  "ext": "jpg"
+ },
+ {
+  "idx": 90,
+  "name": "pastor-headshot-2",
+  "alt": "Portrait of a New Life pastor",
+  "v": "v1769901340",
+  "id": "c9cade57-f30a-4ee1-a40a-0f79c746182f",
+  "ext": "jpg"
+ },
+ {
+  "idx": 49,
+  "name": "pastor-blue-suit",
+  "alt": "A New Life pastor in a blue suit",
+  "v": "v1768888274",
+  "id": "86cb8700-378b-41d9-84f5-6aeabd36f863",
+  "ext": "jpg"
+ },
+ {
+  "idx": 70,
+  "name": "pulpit-1",
+  "alt": "Preaching the Word from the New Life pulpit",
+  "v": "v1769710960",
+  "id": "e1cd51a0-123c-4879-9aa7-27b2a9a0c255",
+  "ext": "jpg"
+ },
+ {
+  "idx": 91,
+  "name": "pulpit-2",
+  "alt": "A minister bringing the message from the pulpit",
+  "v": "v1769994670",
+  "id": "f603ac1d-7e97-46e1-b512-6a8e6cbb5a99",
+  "ext": "jpg"
+ },
+ {
+  "idx": 22,
+  "name": "pastor-guest",
+  "alt": "A New Life pastor greeting a guest at a fellowship event",
+  "v": "v1768242386",
+  "id": "cfb9a28c-f4b1-49e4-a009-e468a14ffbfa",
+  "ext": "jpg"
+ },
+ {
+  "idx": 53,
+  "name": "leader-portrait-1",
+  "alt": "Portrait of a New Life ministry leader",
+  "v": "v1769291366",
+  "id": "bb758ab3-5a97-47ab-acd1-74363b371f56",
+  "ext": "png"
+ },
+ {
+  "idx": 55,
+  "name": "leader-portrait-2",
+  "alt": "Portrait of a New Life ministry leader",
+  "v": "v1769641093",
+  "id": "23055ab2-cb1c-4d6b-81f0-9e6e81e55ff6",
+  "ext": "png"
+ },
+ {
+  "idx": 23,
+  "name": "street-sign",
+  "alt": "The honorary street sign: Rev Robert A Winfree St",
+  "v": "v1768346600",
+  "id": "421b914f-4e52-4551-8238-f25601c89e48",
+  "ext": "jpg"
+ },
+ {
+  "idx": 51,
+  "name": "street-naming-1",
+  "alt": "Celebrating the honorary street naming on Decatur Street",
+  "v": "v1768962073",
+  "id": "4c0ac1fd-8be6-4bb8-baf9-f8dbc408a08b",
+  "ext": "png"
+ },
+ {
+  "idx": 71,
+  "name": "street-naming-2",
+  "alt": "Neighbors and officials gathered for the street naming celebration",
+  "v": "v1769730703",
+  "id": "2a86f502-3701-4983-94e0-13ba93ff8826",
+  "ext": "jpg"
+ },
+ {
+  "idx": 72,
+  "name": "street-naming-3",
+  "alt": "The street naming celebration on Decatur Street",
+  "v": "v1769730728",
+  "id": "aba6060a-6536-4afb-9751-691d33e8af44",
+  "ext": "jpg"
+ },
+ {
+  "idx": 73,
+  "name": "street-naming-4",
+  "alt": "City officials and church family at the street naming",
+  "v": "v1769730768",
+  "id": "8154c134-7478-45ba-a1d9-8498fb5f6656",
+  "ext": "jpg"
+ },
+ {
+  "idx": 85,
+  "name": "street-naming-5",
+  "alt": "Pastor Winfree at the honorary street naming celebration",
+  "v": "v1769830927",
+  "id": "444d3ed6-59f2-489d-8b34-253910a7f6c8",
+  "ext": "jpg"
+ },
+ {
+  "idx": 50,
+  "name": "exterior",
+  "alt": "The New Life church building on Decatur Street",
+  "v": "v1768897144",
+  "id": "d98deac3-b33a-47d7-b0d8-a582b18a448f",
+  "ext": "png"
+ },
+ {
+  "idx": 12,
+  "name": "youth-group",
+  "alt": "Youth and children of New Life gathered in the sanctuary",
+  "v": "v1767990691",
+  "id": "54d9b6ff-9250-43df-a43a-d2d42bd20186",
+  "ext": "jpg"
+ },
+ {
+  "idx": 18,
+  "name": "kids-crafts",
+  "alt": "Children working on crafts together",
+  "v": "v1767995900",
+  "id": "18080083-30d5-4d78-ae39-78a213a608c0",
+  "ext": "jpg"
+ },
+ {
+  "idx": 34,
+  "name": "kids-meal-1",
+  "alt": "Children sharing a meal at a youth event",
+  "v": "v1768547410",
+  "id": "403caff8-601e-492b-a7c8-ce712befca17",
+  "ext": "png"
+ },
+ {
+  "idx": 76,
+  "name": "kids-meal-2",
+  "alt": "Youth enjoying pizza at a fellowship outing",
+  "v": "v1769741930",
+  "id": "fbb7144f-d7b7-4630-a4af-9853f482c389",
+  "ext": "jpg"
+ },
+ {
+  "idx": 35,
+  "name": "youth-violin",
+  "alt": "A young musician playing the violin",
+  "v": "v1768547466",
+  "id": "3cc533f7-3252-42f3-b6ee-0d4a4382427f",
+  "ext": "png"
+ },
+ {
+  "idx": 136,
+  "name": "youth-grads",
+  "alt": "Graduates celebrated by their church family",
+  "v": "v1780231081",
+  "id": "c0ddf268-9b14-4f9d-85da-31bd5f58ba14",
+  "ext": "jpg"
+ },
+ {
+  "idx": 137,
+  "name": "youth-trip",
+  "alt": "Youth on an educational field trip",
+  "v": "v1780231081",
+  "id": "2190d71d-d6c7-4f26-b437-0c8e4fc129f4",
+  "ext": "jpg"
+ },
+ {
+  "idx": 141,
+  "name": "youth-bowling",
+  "alt": "Youth at a bowling outing",
+  "v": "v1780231085",
+  "id": "d5f4e6c6-65fc-4202-9ca7-8524e7cd2abd",
+  "ext": "jpg"
+ },
+ {
+  "idx": 142,
+  "name": "youth-self-defense",
+  "alt": "A self-defense class for young people",
+  "v": "v1783035600",
+  "id": "5b400533-cd20-4dcb-a951-2b383c7395a1",
+  "ext": "jpg"
+ },
+ {
+  "idx": 144,
+  "name": "youth-workshop",
+  "alt": "Young people at a community workshop",
+  "v": "v1783035601",
+  "id": "f74801e1-05c6-48a1-b292-239339d18eeb",
+  "ext": "jpg"
+ },
+ {
+  "idx": 145,
+  "name": "youth-class",
+  "alt": "Students working together at a learning session",
+  "v": "v1783035601",
+  "id": "ecc22173-01ac-4574-9e1d-86e582a238d8",
+  "ext": "jpg"
+ },
+ {
+  "idx": 65,
+  "name": "youth-graduate",
+  "alt": "A New Life graduate in cap and gown",
+  "v": "v1769661921",
+  "id": "49bf7e22-2bd4-41ba-9d81-f9ad830bb366",
+  "ext": "jpg"
+ },
+ {
+  "idx": 138,
+  "name": "youth-bank",
+  "alt": "A young person learning about banking on a field trip",
+  "v": "v1780231081",
+  "id": "4337ad55-e425-4620-9f8f-85609307850c",
+  "ext": "jpg"
+ },
+ {
+  "idx": 16,
+  "name": "pantry-outdoor",
+  "alt": "Food distribution to neighbors outside the church",
+  "v": "v1767994351",
+  "id": "2c4069f1-3982-4d99-b69b-cb2809af66f4",
+  "ext": "jpg"
+ },
+ {
+  "idx": 24,
+  "name": "outreach-tent-1",
+  "alt": "Outreach volunteers serving neighbors at a community event",
+  "v": "v1768348947",
+  "id": "403f8e2d-8454-4193-8d3e-4cba105c3162",
+  "ext": "jpg"
+ },
+ {
+  "idx": 28,
+  "name": "outreach-tent-2",
+  "alt": "Volunteers welcoming neighbors at an outreach tent",
+  "v": "v1768413897",
+  "id": "4b642eed-e886-414d-b67f-2e2bd20e6683",
+  "ext": "jpg"
+ },
+ {
+  "idx": 25,
+  "name": "outreach-team",
+  "alt": "The outreach team in matching shirts",
+  "v": "v1768367010",
+  "id": "1a864d55-7126-4849-b150-80e55800e3c3",
+  "ext": "jpg"
+ },
+ {
+  "idx": 26,
+  "name": "outreach-apartments",
+  "alt": "Serving families in the Hillside community",
+  "v": "v1768369309",
+  "id": "0eb9f19c-2adf-401e-be35-cdce0120b314",
+  "ext": "jpg"
+ },
+ {
+  "idx": 38,
+  "name": "supplies",
+  "alt": "Bags of supplies packed for neighbors in need",
+  "v": "v1768572200",
+  "id": "bfb943ed-35d5-4941-82e2-d90f619e7fdd",
+  "ext": "jpg"
+ },
+ {
+  "idx": 116,
+  "name": "giveaway-1",
+  "alt": "Neighbors receiving supplies from the church",
+  "v": "v1772161683",
+  "id": "bd63905c-9c27-45a6-a551-cfcf381feb93",
+  "ext": "jpg"
+ },
+ {
+  "idx": 117,
+  "name": "giveaway-2",
+  "alt": "A volunteer sharing supplies with a neighbor",
+  "v": "v1772161764",
+  "id": "b41d5b0c-db67-40cd-8f9a-5469e7d03fac",
+  "ext": "jpg"
+ },
+ {
+  "idx": 61,
+  "name": "community-meal",
+  "alt": "A community cookout hosted by New Life",
+  "v": "v1769653733",
+  "id": "d39f6905-f4b4-4fd6-bc92-621c76124b0f",
+  "ext": "jpg"
+ },
+ {
+  "idx": 87,
+  "name": "community-1",
+  "alt": "Fellowship with neighbors at a community event",
+  "v": "v1769885822",
+  "id": "d50c5995-b53e-49f7-8610-ca0c5959db71",
+  "ext": "jpg"
+ },
+ {
+  "idx": 88,
+  "name": "community-2",
+  "alt": "Music and fellowship at a neighborhood gathering",
+  "v": "v1769885823",
+  "id": "ac17eabf-6771-4ed2-a6d9-9a879fad2471",
+  "ext": "jpg"
+ },
+ {
+  "idx": 93,
+  "name": "community-3",
+  "alt": "A community gathering in the neighborhood",
+  "v": "v1770000691",
+  "id": "ad1eb3ee-8fa5-4606-8839-24e05c4637b0",
+  "ext": "jpg"
+ },
+ {
+  "idx": 94,
+  "name": "community-4",
+  "alt": "Neighbors enjoying food and fellowship",
+  "v": "v1770001253",
+  "id": "973f31f8-05ac-419e-953e-9e8c191d1335",
+  "ext": "jpg"
+ },
+ {
+  "idx": 84,
+  "name": "school-supplies",
+  "alt": "School supplies gathered for students",
+  "v": "v1769828295",
+  "id": "034c718b-90d8-40c4-8892-29492e5c16a3",
+  "ext": "jpg"
+ },
+ {
+  "idx": 41,
+  "name": "teachers-donuts",
+  "alt": "Delivering donuts for Teachers Appreciation Day",
+  "v": "v1768788477",
+  "id": "177e5fee-798d-43f1-b252-0de73d94efd0",
+  "ext": "jpg"
+ },
+ {
+  "idx": 21,
+  "name": "baptism",
+  "alt": "A baptism at New Life",
+  "v": "v1768242121",
+  "id": "b4c37f07-a321-4fa1-95a4-6cb8be7a215d",
+  "ext": "jpg"
+ },
+ {
+  "idx": 54,
+  "name": "wedding",
+  "alt": "A wedding ceremony at New Life",
+  "v": "v1769449456",
+  "id": "b6f3d669-2b10-42d4-b31b-d0621784d03a",
+  "ext": "jpg"
+ },
+ {
+  "idx": 17,
+  "name": "choir-1",
+  "alt": "The choir ministering in song",
+  "v": "v1767995668",
+  "id": "ebc974a2-96d4-477c-9ff7-f820f0d27230",
+  "ext": "jpg"
+ },
+ {
+  "idx": 114,
+  "name": "choir-2",
+  "alt": "Musicians and singers leading worship",
+  "v": "v1772161235",
+  "id": "3c06cb86-8341-43e7-8baf-bb3c267f9db7",
+  "ext": "jpg"
+ },
+ {
+  "idx": 100,
+  "name": "musician-keys",
+  "alt": "A musician at the keyboard during worship",
+  "v": "v1771127137",
+  "id": "be8bd67b-6aee-4a3d-92ab-79f76425600d",
+  "ext": "jpg"
+ },
+ {
+  "idx": 101,
+  "name": "musician-drums",
+  "alt": "A drummer leading worship",
+  "v": "v1771127166",
+  "id": "7b05a6ea-2de2-405a-b3c7-755aceeee8b5",
+  "ext": "jpg"
+ },
+ {
+  "idx": 37,
+  "name": "firefighters-1",
+  "alt": "Visiting a Richmond fire station",
+  "v": "v1768572013",
+  "id": "36b8defb-95fa-4456-8e83-52acab53ff73",
+  "ext": "jpg"
+ },
+ {
+  "idx": 40,
+  "name": "firefighters-2",
+  "alt": "New Life members with Richmond firefighters",
+  "v": "v1768768303",
+  "id": "fd2c004d-7949-43c6-b271-a57a1ea73b12",
+  "ext": "png"
+ },
+ {
+  "idx": 56,
+  "name": "fire-station",
+  "alt": "Touring a fire engine with first responders",
+  "v": "v1769647934",
+  "id": "b3b70479-14f3-4e3b-bfd7-6f0426a7e794",
+  "ext": "jpg"
+ },
+ {
+  "idx": 58,
+  "name": "police-partners",
+  "alt": "New Life partnering with a Richmond police officer",
+  "v": "v1769650937",
+  "id": "559aaba2-0a82-407d-bb8f-4fbd73042197",
+  "ext": "jpg"
+ },
+ {
+  "idx": 121,
+  "name": "flyer-good-friday",
+  "alt": "Good Friday 2026: The 7 Last Expressions of Christ from the Cross",
+  "v": "v1774410304",
+  "id": "c1ce4e14-b88d-421e-adac-53e647443681",
+  "ext": "jpg"
+ },
+ {
+  "idx": 124,
+  "name": "flyer-ministries",
+  "alt": "We need your help in all ministries flyer",
+  "v": "v1777382312",
+  "id": "9a084ca3-d61a-4124-a582-bfcf20a0f400",
+  "ext": "jpg"
+ },
+ {
+  "idx": 129,
+  "name": "flyer-community-conversation",
+  "alt": "Community Conversation every 2nd and 4th Tuesday flyer",
+  "v": "v1777571977",
+  "id": "35147bc2-21ce-4874-bcca-dad37d1ef8e1",
+  "ext": "jpg"
+ },
+ {
+  "idx": 134,
+  "name": "fentanyl-talk",
+  "alt": "Fentanyl: Know the Facts community presentation",
+  "v": "v1779999616",
+  "id": "02b413b6-dd4a-46ad-bace-dbdc1ac0695a",
+  "ext": "jpg"
+ },
+ {
+  "idx": 42,
+  "name": "community-conversations-stage",
+  "alt": "A Community Conversations session on stage",
+  "v": "v1768792836",
+  "id": "4e9177fb-bd0d-45c6-8004-c6a19fd5c798",
+  "ext": "png"
+ },
+ {
+  "idx": 2,
+  "name": "fellowship-1",
+  "alt": "Members in fellowship during service",
+  "v": "v1764427668",
+  "id": "a3ba0a37ce2b4d4cbe0414d94f31ca9c",
+  "ext": "jpg"
+ },
+ {
+  "idx": 3,
+  "name": "bible-hands",
+  "alt": "Hands folded in prayer over an open Bible",
+  "v": "v1764427667",
+  "id": "ed5ae12d19aa46858a19270829eb087e",
+  "ext": "jpg"
+ },
+ {
+  "idx": 4,
+  "name": "altar-flowers",
+  "alt": "The altar dressed with flowers for a celebration",
+  "v": "v1764438215",
+  "id": "9bb82905-90e1-41c5-8e7b-39050ea4cd0a",
+  "ext": "jpg"
+ },
+ {
+  "idx": 13,
+  "name": "gathering-1",
+  "alt": "Members gathered at a fellowship table",
+  "v": "v1767991278",
+  "id": "3cf2880f-9f9e-4944-9bf0-8b8a379421ff",
+  "ext": "jpg"
+ },
+ {
+  "idx": 14,
+  "name": "gathering-2",
+  "alt": "Members greeting one another after service",
+  "v": "v1767991320",
+  "id": "57ff4f71-f3d4-4b24-bf3b-57796dabf8e1",
+  "ext": "jpg"
+ },
+ {
+  "idx": 15,
+  "name": "gathering-3",
+  "alt": "Church family gathered for a meeting",
+  "v": "v1767993895",
+  "id": "fd671779-19c3-482c-8740-7192c848efde",
+  "ext": "jpg"
+ },
+ {
+  "idx": 33,
+  "name": "group-1",
+  "alt": "The New Life family gathered together",
+  "v": "v1768546951",
+  "id": "8e799e16-e80a-4da0-86a4-7a9951134a37",
+  "ext": "jpg"
+ },
+ {
+  "idx": 36,
+  "name": "men-fellowship",
+  "alt": "Men of New Life in fellowship",
+  "v": "v1768571769",
+  "id": "4de29ab8-7425-484c-878b-7b317c3c3d5f",
+  "ext": "jpg"
+ },
+ {
+  "idx": 57,
+  "name": "women-ministry",
+  "alt": "Women of New Life dressed for a special service",
+  "v": "v1769650776",
+  "id": "443c7b94-b19e-467f-9f06-5398d85a506c",
+  "ext": "jpg"
+ },
+ {
+  "idx": 59,
+  "name": "group-outside",
+  "alt": "The church family gathered outside",
+  "v": "v1769651558",
+  "id": "5eec39aa-1c38-456f-a3fc-a5f245b68716",
+  "ext": "jpg"
+ },
+ {
+  "idx": 67,
+  "name": "women-luncheon",
+  "alt": "Women enjoying a fellowship luncheon",
+  "v": "v1769669685",
+  "id": "ca2e1bb6-055a-4a61-9fc1-ecda5e6d31e0",
+  "ext": "jpg"
+ },
+ {
+  "idx": 68,
+  "name": "women-pink",
+  "alt": "Women of New Life supporting breast cancer awareness",
+  "v": "v1769669699",
+  "id": "9427ca2f-bfce-4b0f-b9c8-44d3d994109e",
+  "ext": "jpg"
+ },
+ {
+  "idx": 69,
+  "name": "women-fellowship",
+  "alt": "Women of New Life in fellowship",
+  "v": "v1769669711",
+  "id": "ee62f03a-9f53-4520-a7d0-335b63289019",
+  "ext": "jpg"
+ },
+ {
+  "idx": 108,
+  "name": "african-attire-1",
+  "alt": "Members in African attire for a cultural celebration",
+  "v": "v1772121777",
+  "id": "8f3a03fd-7a3a-4842-925a-7ac285725a8d",
+  "ext": "jpg"
+ },
+ {
+  "idx": 109,
+  "name": "african-attire-2",
+  "alt": "Women in African attire celebrating heritage",
+  "v": "v1772121814",
+  "id": "c2f81981-c4fb-4bde-bc8a-077361cc0e9f",
+  "ext": "jpg"
+ },
+ {
+  "idx": 102,
+  "name": "banquet",
+  "alt": "A celebration banquet",
+  "v": "v1771127575",
+  "id": "46181e93-c547-4232-af1e-ffca9a3dfcf0",
+  "ext": "jpg"
+ },
+ {
+  "idx": 131,
+  "name": "art-class-1",
+  "alt": "A painting class at the community center",
+  "v": "v1779547086",
+  "id": "556e37e5-42d4-46b3-8ec2-8cb8a01fb05b",
+  "ext": "jpg"
+ },
+ {
+  "idx": 132,
+  "name": "art-class-2",
+  "alt": "Seniors enjoying a painting class",
+  "v": "v1779547087",
+  "id": "f9e49de0-7429-4329-8514-ae6a801b5682",
+  "ext": "jpg"
+ },
+ {
+  "idx": 126,
+  "name": "fitness-1",
+  "alt": "A fitness class in the fellowship hall",
+  "v": "v1777571932",
+  "id": "333cfaab-7763-49f1-8e6e-51b35e535e65",
+  "ext": "jpg"
+ },
+ {
+  "idx": 127,
+  "name": "fitness-2",
+  "alt": "Members exercising together",
+  "v": "v1777571943",
+  "id": "021d8372-d76a-4cdb-9685-b573921486fb",
+  "ext": "jpg"
+ }
+]

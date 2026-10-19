@@ -1,0 +1,177 @@
+import type { Opportunity, ReadinessItem } from './types'
+
+/**
+ * Funding opportunities researched for New Life Deliverance Tabernacle and New Life Community Center
+ * (501(c)(3), EIN 83-4614645). Facts verified against the cited sources on October 19, 2026.
+ * Dates marked "expected" are projected from the prior cycle and must be confirmed when the funder posts the new round.
+ * Items with verified: false are leads the Grant Advisor flags for confirmation before anyone relies on them.
+ */
+export const RESEARCHED_ON = '2026-10-19'
+
+export const opportunities: Opportunity[] = [
+  {
+    id: 'op_cacfp', name: 'At-Risk Afterschool Meals (CACFP)', funder: 'USDA via Virginia Dept. of Education, School & Community Nutrition', category: 'food', level: 'federal', entity: 'center',
+    amount: '$4.60 per supper and $1.26 per snack, per child, per day', amountValue: 8300, window: 'Rolling. New community sponsors apply through SNPWeb.', status: 'rolling', fit: 95,
+    whyFit: 'The after-school program already meets Mondays and Wednesdays with homework help and enrichment, which is exactly what the meal program requires. Serving a supper to 25 students twice a week for 36 weeks returns about $8,300 a year that currently comes out of the church budget.',
+    requirements: ['Educational or enrichment activity alongside the meal', 'Area eligibility: a nearby school with at least 50% free or reduced-price meals', 'Monthly meal claims within 60 days', 'Food safety and record keeping'],
+    nextSteps: ['Email the VDOE community sponsor contact to request SNPWeb access', 'Confirm area eligibility using Blackwell Elementary or River City Middle', 'Assign the Culinary Arts ministry to meal production and daily counts'],
+    programs: ['After-School Program', 'Culinary Arts'], verified: true,
+    source: 'https://www.doe.virginia.gov/programs-services/school-operations-support-services/school-nutrition/programs-promotions-and-initiatives/at-risk-afterschool-meal-program',
+  },
+  {
+    id: 'op_ujima', name: 'Ujima Legacy Fund grant', funder: 'Community Foundation for a greater Richmond (Ujima giving circle)', category: 'education', level: 'foundation', entity: 'center',
+    amount: 'Up to $20,000', amountValue: 20000, window: 'Annual. Next listed deadline September 2027 (confirm).', nextDeadline: '2027-09-25', status: 'upcoming', fit: 93,
+    whyFit: 'Ujima funds education and youth empowerment for young people 12 to 21 in the Richmond region, with emphasis on Black youth: after-school tutoring, mentoring, financial literacy and career readiness. That describes the Community Center almost word for word. Individual churches are ineligible, so the Center applies.',
+    requirements: ['501(c)(3) serving the City of Richmond or nearby counties', 'Program focused on youth 12 to 21', 'Not for deficits, debt or endowments'],
+    nextSteps: ['Apply as New Life Community Center, not the church', 'Use after-school attendance and tutoring hours from this portal as outcome data', 'Collect two letters from partner schools'],
+    programs: ['After-School Program', 'Mighty Mentor', 'Youth trips'], verified: true, source: 'https://www.instrumentl.com/grants/ujima-legacy-fund-grants',
+  },
+  {
+    id: 'op_nap', name: 'Neighborhood Assistance Program tax credits', funder: 'Virginia Dept. of Social Services', category: 'tax-credit', level: 'state', entity: 'center',
+    amount: 'Donors receive up to a 65% Virginia tax credit', amountValue: 50000, window: 'Apply March 15 to the first business day in May. Credits run July 1 to June 30.', nextDeadline: '2027-05-03', status: 'upcoming', fit: 90, outsideBox: true,
+    whyFit: 'NAP does not give money directly; it makes every major gift cheaper for the donor. A local business that gives $10,000 to the Community Center can receive up to $6,500 back in Virginia tax credits. That turns Hull Street and Manchester businesses into realistic $5,000 to $25,000 sponsors.',
+    requirements: ['Approved 501(c)(3) serving low-income people', 'Annual application inside the window', 'Credit allocation tracked and reported'],
+    nextSteps: ['Register the Center in the NAP database before March', 'Build a list of 20 local business prospects in Partners', 'Prepare a one-page sponsor ask that shows the after-credit cost'],
+    programs: ['Food Pantry', 'After-School Program', 'Community Center'], verified: true, source: 'https://dss.virginia.gov/community-and-volunteer-services/nap/',
+  },
+  {
+    id: 'op_nsgp', name: 'Nonprofit Security Grant Program', funder: 'FEMA via Virginia Dept. of Emergency Management', category: 'security', level: 'federal', entity: 'church',
+    amount: 'Up to $200,000 per site', amountValue: 200000, window: 'Annual. The 2026 Virginia window was July 1 to 10.', nextDeadline: '2027-07-09', status: 'recurring', fit: 92,
+    whyFit: 'Houses of worship are eligible. New Life already has a Security ministry, sits in a neighborhood the church itself has convened forums about, and its Church Administrator serves as a Richmond Police chaplain, which helps with the required vulnerability assessment and law-enforcement coordination.',
+    requirements: ['Vulnerability assessment for 900 Decatur St', 'Current-year Investment Justification form, unaltered', 'Mission statement PDF', 'UEI from SAM.gov before any award is paid'],
+    nextSteps: ['Request a free security assessment now so it is done before spring', 'Register on SAM.gov (takes weeks)', 'Draft the Investment Justification in April when the new form posts'],
+    programs: ['Security ministry', 'Sanctuary'], verified: true, source: 'https://www.vdem.virginia.gov/divisions/finance/grants/opportunity/26001-2/',
+  },
+  {
+    id: 'op_psn', name: 'Project Safe Neighborhoods (Eastern District of Virginia)', funder: 'U.S. DOJ via Virginia DCJS', category: 'violence', level: 'federal', entity: 'center',
+    amount: '$25,000 to $200,000, no match', amountValue: 100000, window: 'Annual. The 2026 round was due January 15, 2026.', nextDeadline: '2027-01-15', status: 'upcoming', fit: 89,
+    whyFit: 'Richmond receives funding preference, and prevention and reentry programs run by faith-based 501(c)(3)s are named as eligible. New Life was founded on a re-entry vision, runs violence-prevention conversations, and hosted a September 2026 forum on gun violence with the Richmond Police Chief.',
+    requirements: ['501(c)(3) serving the Eastern District', 'One application per organization', 'Program within prevention or reentry focus areas', 'No food, gift cards or client stipends'],
+    nextSteps: ['Watch DCJS for the 2027 solicitation in December', 'Package Community Conversations, mentoring and reentry support as one prevention program', 'Get a letter of support from RPD'],
+    programs: ['Community Conversations', 'Mighty Mentor', 'Re-entry support'], verified: true, source: 'https://www.dcjs.virginia.gov/sites/dcjs.virginia.gov/files/grants/PSN_EDVA_Funding_Opportunity_2026_0.pdf',
+  },
+  {
+    id: 'op_opioid', name: 'Opioid settlement community funding', funder: 'City of Richmond, Office of Opioid and Substance Use Response', category: 'recovery', level: 'city', entity: 'center',
+    amount: 'Share of a $600,000 pool (up to 10 awards)', amountValue: 60000, window: 'Annual request for applications. The 2026 round was due March 20, 2026.', nextDeadline: '2027-03-19', status: 'recurring', fit: 88,
+    whyFit: 'The church itself grew out of an addiction after-care group (Relapse Prevention, later New Life Maintenance), and it already hosts sessions like "Fentanyl: Know the Facts." Richmond names community-based prevention in Black communities as a 2026 priority.',
+    requirements: ['Nonprofit in good standing with the City', 'Evidence-based prevention, treatment or recovery approach', 'Most recent complete Form 990 (990-N not accepted)', 'Liability insurance and operating budget'],
+    nextSteps: ['Partner with RBHA on an evidence-based curriculum', 'Track attendance at prevention sessions starting now', 'Prepare the budget and narrative in January'],
+    programs: ['Recovery & prevention', 'Counseling'], verified: true, source: 'https://rva.gov/sites/default/files/2026-01/Request_for_Applications_%28Open_Application%29_%20UPDATED.pdf',
+  },
+  {
+    id: 'op_5310', name: 'Accessible van for seniors and riders with disabilities (Section 5310)', funder: 'Federal Transit Administration via Virginia DRPT', category: 'transport', level: 'state', entity: 'center',
+    amount: 'State-procured accessible vehicle', amountValue: 85000, window: 'Applications open December 1 to February 1 each year.', nextDeadline: '2027-02-01', status: 'upcoming', fit: 86,
+    whyFit: 'The Transportation ministry already drives members and neighbors to church, appointments and programs. Section 5310 provides accessible vehicles for seniors and people with disabilities through the state, which can replace an aging van or add capacity.',
+    requirements: ['Serve seniors (65+) and people with disabilities', 'Vehicle ordered from the state menu (no self-purchase)', 'Local match share (confirm current percentage)', 'Participation in the regional coordinated transportation plan'],
+    nextSteps: ['Log every ride in the Rides tab to document demand', 'Contact the DRPT 5310 program manager in November', 'Submit through DRPT WebGrants between Dec 1 and Feb 1'],
+    programs: ['Transportation ministry'], verified: true, source: 'https://drpt.virginia.gov/our-grant-programs/human-services-grant-program/',
+  },
+  {
+    id: 'op_solar', name: 'Solar and storage with IRS Elective Pay', funder: 'U.S. Treasury (Elective Pay)', category: 'energy', level: 'federal', entity: 'church',
+    amount: 'About 30% or more of project cost returned as a cash payment', amountValue: 30000, window: 'Solar must be placed in service by December 31, 2027. Battery storage remains eligible to 2035.', nextDeadline: '2027-12-31', status: 'open', fit: 80, outsideBox: true,
+    whyFit: 'Churches cannot use tax credits, but Elective Pay lets them receive the credit as a payment. A rooftop system lowers the electric bill every month for decades, and the window for solar closes at the end of 2027.',
+    requirements: ['Pre-filing registration with the IRS', 'Project placed in service by the deadline', 'Annual return filed to claim the payment', 'Foreign-entity sourcing rules for 2026+ projects'],
+    nextSteps: ['Get two installer quotes this winter', 'Ask installers about bonus adders for low-income communities', 'Register the project with the IRS before filing'],
+    programs: ['Building & Grounds'], verified: true, source: 'https://planetdetroit.org/2026/04/irs-elective-pay-solar-deadline/',
+  },
+  {
+    id: 'op_fvip', name: 'Firearm Violence Intervention & Prevention', funder: 'Virginia DCJS', category: 'violence', level: 'state', entity: 'center',
+    amount: '$25,000 to $250,000 over two years', amountValue: 125000, window: 'The CY2027-2028 round closed July 31, 2026. Watch for the next round.', status: 'recurring', fit: 84,
+    whyFit: 'Open to nonprofits that have never received FVIP funding, which includes New Life Community Center. The church has a track record of convening survivors, police and youth around gun violence.',
+    requirements: ['Complete the DCJS FVIP readiness assessment', 'Evidence-informed local strategy for ages 28 and under', 'Reimbursement-only payments (cash flow plan needed)'],
+    nextSteps: ['Document outcomes from Community Conversations and mentoring', 'Complete the readiness assessment early', 'Build a reimbursement reserve'],
+    programs: ['Community Conversations', 'Youth mentoring'], verified: true, source: 'https://www.dcjs.virginia.gov/sites/dcjs.virginia.gov/files/2026-07/FVIP_Funding_Opportunity_Webinar_7.8.26.pdf',
+  },
+  {
+    id: 'op_dominion', name: 'Dominion Energy Charitable Foundation', funder: 'Dominion Energy', category: 'capacity', level: 'corporate', entity: 'center',
+    amount: 'Varies by request', amountValue: 15000, window: 'Two cycles a year. Fall 2026 closed September 11; spring cycle expected to open in January.', nextDeadline: '2027-03-01', status: 'upcoming', fit: 76,
+    whyFit: 'Dominion funds human needs, education and community vitality in its service area, and New Life is a Dominion customer in the City of Richmond.',
+    requirements: ['Nonprofit in a Dominion service area', 'Clear human-needs or education outcomes'],
+    nextSteps: ['Prepare a pantry or after-school request for the spring cycle', 'Attend the virtual office hours when the cycle opens'],
+    programs: ['Food Pantry', 'After-School Program'], verified: true, source: 'https://s205.q4cdn.com/611413639/files/doc_news/2026/08/Dominion-Energy-Charitable-Foundation-Fall-Grant-Cycle-Now-Open.pdf',
+  },
+  {
+    id: 'op_cdbg', name: 'Federal entitlement funds (CDBG / ESG)', funder: 'City of Richmond, Housing & Community Development', category: 'housing', level: 'city', entity: 'center',
+    amount: 'Varies; projects must leverage at least 1:1', amountValue: 50000, window: 'The FY26 notice opened November 20 and closed December 18. Expect a similar late-fall cycle.', nextDeadline: '2026-12-16', status: 'upcoming', fit: 70,
+    whyFit: 'New Life keeps a separate church home for people facing housing instability, and the City prioritizes services for people experiencing homelessness and low-income households.',
+    requirements: ['SAM.gov registration and UEI', '1:1 leverage of other funds', 'Board-signed acknowledgment form', 'Budget workbook'],
+    nextSteps: ['Confirm the FY28 notice date with Housing & Community Development', 'Document church-home outcomes (stays, move-outs to stable housing)', 'Line up matching funds'],
+    programs: ['Church home (housing stability)'], verified: true, source: 'https://rva.gov/sites/default/files/2024-11/FY26%20NOFA%20Packet%20for%20Federal%20Entitlement%20Funds%20-%2011.20.24.pdf',
+  },
+  {
+    id: 'op_bja', name: 'Enhancing Security for Houses of Worship', funder: 'U.S. DOJ, Bureau of Justice Assistance', category: 'security', level: 'federal', entity: 'church',
+    amount: 'Up to $200,000', amountValue: 200000, window: 'The 2026 solicitation closed September 2, 2026. Recurrence is not guaranteed.', status: 'recurring', fit: 74,
+    whyFit: 'A second security source alongside FEMA that emphasizes coordination with local law enforcement, where New Life has a direct relationship through the Richmond Police chaplaincy.',
+    requirements: ['Grants.gov and JustGrants registration', 'Partnership with local law enforcement likely', 'Security cameras, evidence preservation, coordination'],
+    nextSteps: ['Keep SAM.gov active', 'Discuss a joint application with RPD if the program returns'],
+    programs: ['Security ministry'], verified: true, source: 'https://grantedai.com/blog/doj-bja-houses-of-worship-security-7-7-million-september-2-2026-grants-gov-deadline-200000-max-law-enforcement-partnership-versus-fema-nsgp-strategy',
+  },
+  {
+    id: 'op_cfr', name: 'Community Impact Grants', funder: 'Community Foundation for a greater Richmond', category: 'capacity', level: 'foundation', entity: 'center',
+    amount: '$5,000 to $30,000', amountValue: 20000, window: 'Largely by invitation.', status: 'idea', fit: 70,
+    whyFit: 'The Foundation proactively invites partners working on economic mobility and belonging. The way in is relationships and visibility, which this portal\'s impact reports support.',
+    requirements: ['Local nonprofit', 'Invitation from Foundation staff'],
+    nextSteps: ['Invite Foundation staff to a Saturday pantry distribution', 'Share the quarterly impact report'],
+    programs: ['Community Center'], verified: true, source: 'https://grantedai.com/grants/community-impact-grants-the-community-foundation-for-a-greater-r-9e012387',
+  },
+  {
+    id: 'op_sacred', name: 'National Fund for Sacred Places', funder: 'Partners for Sacred Places and the National Trust (Lilly Endowment funded)', category: 'facility', level: 'foundation', entity: 'church',
+    amount: 'Capital grant plus technical help (confirm current range)', amountValue: 100000, window: 'Cohort applications opened January 2026. Expect the next cohort in early 2027.', nextDeadline: '2027-02-15', status: 'upcoming', fit: 55,
+    whyFit: 'Supports historic, community-serving houses of worship. Eligibility depends on the age and significance of the building at 900 Decatur St, which needs to be confirmed first.',
+    requirements: ['Historic building (confirm age and significance)', 'Strong community use of the building', 'Matching campaign'],
+    nextSteps: ['Find the construction year of 900 Decatur St in City property records', 'Check eligibility before investing time'],
+    programs: ['Building & Grounds'], verified: false, source: 'https://www.fundforsacredplaces.org/2026/01/',
+  },
+  {
+    id: 'op_recurring', name: 'Launch recurring online giving', funder: 'New Life congregation', category: 'giving', level: 'creative', entity: 'church',
+    amount: 'Steadier monthly income', amountValue: 24000, window: 'Available as soon as online giving is live.', status: 'open', fit: 97, outsideBox: true,
+    whyFit: 'The current website has no online giving. Industry data shows recurring gifts make up about 42% of digital donations, and nearly half of churches still do not offer them. This is the fastest dollar available to New Life.',
+    requirements: ['Online giving on the new website', 'Announcement from the pulpit with a simple QR code'],
+    nextSteps: ['Turn on online and recurring giving with the new site', 'Run a four-week "Faithful Giving" emphasis', 'Send givers a thank-you and an annual statement from the portal'],
+    programs: ['Stewardship'], verified: true, source: 'https://www.ministrybrands.com/church-website/church-website-mistakes',
+  },
+  {
+    id: 'op_legacy', name: 'Winfree Legacy Fund', funder: 'Members, alumni families and friends', category: 'giving', level: 'creative', entity: 'center',
+    amount: 'Endowment and planned gifts', amountValue: 50000, window: 'Anytime; anchor to the street-naming anniversary each March.', status: 'idea', fit: 85, outsideBox: true,
+    whyFit: 'The City honored Pastor Robert A. Winfree with an honorary street name in 2025. A named legacy fund for the Community Center gives families, former students and city friends a lasting way to honor that legacy through bequests and gifts of stock.',
+    requirements: ['Board-approved fund policy', 'Bequest language and a simple pledge form', 'Option to hold the fund at the Community Foundation'],
+    nextSteps: ['Draft a one-page legacy fund policy', 'Plan a March anniversary celebration on Rev Robert A Winfree St'],
+    programs: ['Community Center'], verified: false,
+  },
+  {
+    id: 'op_rentals', name: 'Facility rentals and catering', funder: 'Earned revenue', category: 'earned', level: 'creative', entity: 'church',
+    amount: 'Estimated $12,000 to $30,000 a year', amountValue: 20000, window: 'Ongoing', status: 'idea', fit: 78, outsideBox: true,
+    whyFit: 'The fellowship hall and kitchen sit empty much of the week, and the Culinary Arts ministry already sells $10 dinners after special services. Rentals for repasts, showers and community meetings, plus catering, add income without a grant application.',
+    requirements: ['Facility use policy and rental agreement', 'Insurance certificate requirements for renters', 'Kitchen inspection current'],
+    nextSteps: ['Publish rental rates on the website', 'Track every booking in Facilities'],
+    programs: ['Culinary Arts', 'Facilities'], verified: false,
+  },
+  {
+    id: 'op_match', name: 'Employer matching and volunteer grants', funder: 'Members\' employers', category: 'giving', level: 'corporate', entity: 'either',
+    amount: 'Often 1:1 matches or $10 to $25 per volunteer hour', amountValue: 6000, window: 'Ongoing; varies by employer', status: 'idea', fit: 72, outsideBox: true,
+    whyFit: 'Many large employers match gifts or pay grants for hours their employees volunteer. Members who already serve at the pantry or in tutoring may be leaving money unclaimed. Specific employer programs must be confirmed one by one.',
+    requirements: ['Member submits through their employer portal', 'Center provides 501(c)(3) letter and hours verification'],
+    nextSteps: ['Add an "Does your employer match?" question to the member profile', 'Send a one-time email to members who volunteer'],
+    programs: ['All ministries'], verified: false,
+  },
+  {
+    id: 'op_vfhy', name: 'Youth substance use prevention grants', funder: 'Virginia Foundation for Healthy Youth', category: 'recovery', level: 'state', entity: 'center',
+    amount: 'Varies (confirm current cycle)', amountValue: 25000, window: 'Confirm the current cycle', status: 'idea', fit: 82,
+    whyFit: 'Funds evidence-based prevention for Virginia youth, which fits the after-school program and the church\'s prevention history.',
+    requirements: ['Evidence-based curriculum', 'Youth outcome tracking'], nextSteps: ['Confirm the next cycle with the Foundation'],
+    programs: ['After-School Program'], verified: false, source: 'https://www.virginia.gov/agencies/foundation-for-healthy-youth/',
+  },
+]
+
+export const readiness: ReadinessItem[] = [
+  { id: 'rd_sam', label: 'SAM.gov registration and UEI', detail: 'Register New Life Community Center at SAM.gov. It is free and can take several weeks.', entity: 'center', done: false, unlocks: 'Federal and pass-through funds: NSGP, PSN, CDBG/ESG, CACFP' },
+  { id: 'rd_990', label: 'Most recent Form 990-EZ on file', detail: 'FYE July 2025 return filed November 2025.', entity: 'center', done: true, unlocks: 'Almost every foundation and city application' },
+  { id: 'rd_board', label: 'Board roster and bylaws', detail: 'Current board list with officers and terms.', entity: 'center', done: true, unlocks: 'Foundation and city applications' },
+  { id: 'rd_budget', label: 'FY2027 operating budget', detail: 'One-page budget for the Center with program lines.', entity: 'center', done: false, unlocks: 'City, state and foundation applications' },
+  { id: 'rd_outcomes', label: 'Program outcome data', detail: 'Pantry households, after-school attendance and tutoring hours tracked in this portal.', entity: 'center', done: true, unlocks: 'Stronger narratives and renewals' },
+  { id: 'rd_vuln', label: 'Security vulnerability assessment', detail: 'Written assessment of 900 Decatur St.', entity: 'church', done: false, unlocks: 'FEMA NSGP and DOJ security grants' },
+  { id: 'rd_letters', label: 'Letters of support', detail: 'RPD, FeedMore, partner schools and RBHA.', entity: 'either', done: false, unlocks: 'PSN, opioid settlement, Ujima' },
+  { id: 'rd_logic', label: 'Logic models for three core programs', detail: 'Food pantry, after-school, Community Conversations.', entity: 'center', done: false, unlocks: 'Evidence-based applications (FVIP, opioid, VFHY)' },
+  { id: 'rd_insurance', label: 'Certificate of liability insurance', detail: 'Current policy certificate saved in Documents.', entity: 'either', done: true, unlocks: 'City contracts and rentals' },
+  { id: 'rd_scc', label: 'Virginia SCC good standing', detail: 'Confirm the Center\'s annual report is current with the State Corporation Commission.', entity: 'center', done: false, unlocks: 'City of Richmond applications' },
+]
