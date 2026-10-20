@@ -21,7 +21,7 @@ export function PortalHome() {
   const greet = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening'
   return (
     <>
-      <PageTitle title={`${greet}, ${me.first}.`} text={`Member since ${fmtDate(me.joinedAt)}. Here is what is yours at ${state.church.shortName}.`} />
+      <PageTitle title={`${greet}, ${me.first.replace(/\.+$/, "")}.`} text={`Member since ${fmtDate(me.joinedAt)}. Here is what is yours at ${state.church.shortName}.`} />
       <div className="grid gap-3 sm:grid-cols-3">
         <Stat label={`Giving, ${year} year to date`} value={money(ytd)} sub={`${myGifts.filter((g) => g.date.startsWith(year)).length} gifts`} hi />
         <Stat label="Upcoming registrations" value={myEvents.length} sub={myEvents[0] ? `Next: ${fmtShort(myEvents[0].date)}` : 'None yet'} />

@@ -110,9 +110,26 @@ function StaticFreedom() {
 
 function StoryCopy() {
   return (
-    <div className="mt-8 max-w-2xl">
-      <p className="text-lg sm:text-xl text-white/80 leading-relaxed">New Life began as a dream to minister to people coming home from prison and an after-care group for people in recovery. For nearly three decades this church has walked with people out of bondage and into the liberty of Christ.</p>
-      <div className="mt-8"><GoldButton to="/about" icon={<ArrowRight size={18} />}>Read our story</GoldButton></div>
+    <div className="mt-10 sm:mt-14 grid gap-8 lg:grid-cols-[1.35fr_1fr] lg:gap-14 items-start">
+      <div className="relative pl-6 sm:pl-8">
+        <span aria-hidden="true" className="absolute left-0 top-1 bottom-1 w-[3px] rounded-full bg-gradient-to-b from-gold-light via-gold-bright to-transparent" />
+        <Eyebrow light>Our story</Eyebrow>
+        <p className="mt-4 font-display text-[clamp(1.6rem,3.4vw,2.6rem)] leading-[1.18] tracking-[-0.01em] text-white">
+          It began as a dream to minister to people <span className="italic gold-leaf">coming home from prison</span>, and an after-care group for people in recovery.
+        </p>
+        <p className="mt-5 text-base sm:text-lg text-white/75 leading-relaxed max-w-2xl">
+          For nearly three decades this church has walked with people out of bondage and into the liberty of Christ.
+        </p>
+        <div className="mt-8"><GoldButton to="/about" icon={<ArrowRight size={18} />}>Read our story</GoldButton></div>
+      </div>
+      <dl className="grid grid-cols-3 lg:grid-cols-1 gap-3 sm:gap-4">
+        {[['1997', 'Founded'], ['29', 'Years strong'], ['900', 'Decatur St.']].map(([k, v]) => (
+          <div key={k} className="rounded-2xl border border-white/12 bg-white/[0.05] backdrop-blur-sm px-4 py-4 sm:px-5 lg:flex lg:items-baseline lg:gap-4">
+            <dt className="font-sans text-3xl sm:text-4xl font-semibold gold-leaf tabular-nums leading-none">{k}</dt>
+            <dd className="mt-2 lg:mt-0 text-[10px] sm:text-xs font-caps tracking-[0.1em] uppercase text-white/65 whitespace-nowrap">{v}</dd>
+          </div>
+        ))}
+      </dl>
     </div>
   )
 }
@@ -163,7 +180,7 @@ export function Freedom() {
           <motion.div style={{ opacity: hintOpacity }} aria-hidden="true" className="absolute left-1/2 -translate-x-1/2 bottom-5 font-caps text-[11px] tracking-[0.3em] text-white/60">SCROLL</motion.div>
         </div>
       </section>
-      <section className="relative bg-midnight pb-20 sm:pb-28 -mt-px">
+      <section className="relative bg-midnight pt-6 pb-20 sm:pb-28 -mt-px">
         <div className="mx-auto max-w-6xl px-4 sm:px-6"><StoryCopy /></div>
       </section>
     </>
