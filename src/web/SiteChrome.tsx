@@ -119,8 +119,8 @@ export function SiteFooter() {
             <p className="font-caps text-xs tracking-[0.24em] text-gold-light">Find us</p>
             <address className="mt-4 not-italic text-white/80 space-y-3">
               <a href={church.directionsUrl} target="_blank" rel="noopener noreferrer" className="block hover:text-white">{church.address}<br />{church.city}, {church.state} {church.zip}</a>
-              <a href={church.phoneHref} className="hit hover:text-white">{church.phone}</a>
-              <a href={`mailto:${church.email}`} className="hit hover:text-white break-all">{church.email}</a>
+              <a href={church.phoneHref} className="flex items-center min-h-[44px] hover:text-white">{church.phone}</a>
+              <a href={`mailto:${church.email}`} className="flex items-center min-h-[44px] hover:text-white break-all">{church.email}</a>
             </address>
             <p className="mt-4 text-sm text-white/60">Office: {officeHours[0].d}, {officeHours[0].h}</p>
           </div>

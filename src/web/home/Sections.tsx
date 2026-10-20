@@ -6,6 +6,7 @@ import { church, weekly, type WeeklyItem } from '@/config/site'
 import { Stagger, item, CountUp, Parallax } from '../motion'
 import { Photo, Art, art, Eyebrow, SectionHeading, SplitWords, GoldButton, GlassButton, RoyalButton, OutlineButton, Container, photoAlt } from '../ui'
 import { Rays } from './Hero'
+import { useFits } from '../useFits'
 
 /* ------------------------------------------------------------------ Marquee */
 export function Marquee() {
@@ -42,15 +43,15 @@ export function Rhythm() {
       <Container className="relative">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <SectionHeading eyebrow="Every week at New Life" title="There is something happening almost every day." text="Worship, the Word, groceries for neighbors, tutoring for students and a place to talk about what matters on our block. Pick a day." />
-          <div role="tablist" aria-label="Day of the week" className="flex gap-2 overflow-x-auto no-scrollbar pb-1 -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div role="tablist" aria-label="Day of the week" className="flex gap-2 overflow-x-auto no-scrollbar pb-1 pt-4 -mt-4 -mx-4 px-4 sm:mx-0 sm:px-0">
             {days.map((d, i) => {
               const has = weekly.some((w) => w.dayIndex === i)
               const active = day === i
               return (
                 <button key={d} role="tab" aria-selected={active} disabled={!has} onClick={() => setDay(i)} className={`relative shrink-0 flex flex-col items-center justify-center rounded-2xl min-w-[64px] h-[84px] px-3 border transition-all ${active ? 'bg-midnight text-white border-midnight shadow-lift' : has ? 'bg-paper border-line hover:border-plum text-midnight' : 'bg-transparent border-dashed border-line text-slate/50 cursor-not-allowed'}`}>
                   <span className="font-caps text-[11px] tracking-[0.2em]">{d.slice(0, 3)}</span>
-                  <span className="mt-1 font-display text-2xl leading-none">{weekly.filter((w) => w.dayIndex === i).length || '·'}</span>
-                  {i === today && <span className={`absolute -top-2 rounded-full px-2 py-0.5 text-[10px] font-bold ${active ? 'bg-gold-bright text-midnight' : 'bg-plum text-white'}`}>Today</span>}
+                  <span className="mt-1 text-xl font-semibold leading-none tabular-nums">{weekly.filter((w) => w.dayIndex === i).length || '·'}</span>
+                  {i === today && <span className={`absolute -top-2.5 rounded-full px-2 py-0.5 text-[10px] font-bold ${active ? 'bg-gold-bright text-midnight' : 'bg-plum text-white'}`}>Today</span>}
                 </button>
               )
             })}
@@ -87,8 +88,10 @@ export function Welcome() {
           <Parallax speed={0.15}>
             <div className="relative mx-auto max-w-md">
               <div aria-hidden="true" className="absolute -inset-6 rounded-[999px_999px_28px_28px/520px_520px_28px_28px] border border-gold-bright/40" />
-              <Photo name="pastors-portrait" className="arch aspect-[4/5] shadow-lift" alt="The pastors of New Life Deliverance Tabernacle" />
-              <div className="absolute -bottom-8 -left-6 sm:-left-12 rounded-2xl bg-midnight text-white px-5 py-4 shadow-lift max-w-[15rem]">
+              <div className="arch relative aspect-[5/4] overflow-hidden bg-midnight shadow-lift">
+                <img src={art('pastors-arch')} srcSet={`${art('pastors-arch', true)} 600w, ${art('pastors-arch')} 970w`} sizes="(max-width: 768px) 90vw, 448px" alt="The pastors of New Life Deliverance Tabernacle" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
+              </div>
+              <div className="absolute -bottom-8 -left-6 sm:-left-12 z-10 rounded-2xl bg-midnight text-white px-5 py-4 shadow-lift max-w-[15rem]">
                 <p className="font-caps text-[10px] tracking-[0.24em] text-gold-light">Serving together</p>
                 <p className="font-display text-xl leading-snug mt-1">Two pastors, called to the same house, standing side by side.</p>
               </div>
@@ -193,39 +196,54 @@ export function Timeline() {
   const ref = useRef<HTMLElement>(null)
   const track = useRef<HTMLDivElement>(null)
   const reduce = useReducedMotion()
+  // Pinned (scroll-driven) only when the window is tall enough to show a whole card; otherwise a normal sideways scroller.
+  const pinned = useFits(780, 820)
   const [dist, setDist] = useState(0)
   useEffect(() => {
+    if (!pinned) return
     const measure = () => { if (track.current) setDist(Math.max(0, track.current.scrollWidth - window.innerWidth + 48)) }
     measure(); window.addEventListener('resize', measure); return () => window.removeEventListener('resize', measure)
-  }, [])
+  }, [pinned])
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end end'] })
   const x = useTransform(scrollYProgress, [0.05, 0.95], [0, -dist])
   const bar = useTransform(scrollYProgress, [0.05, 0.95], ['0%', '100%'])
-  const cards = milestones.map((m, i) => (
-    <article key={m.y} className="relative w-[82vw] sm:w-[440px] shrink-0">
-      <Photo name={m.photo} className="aspect-[4/3] rounded-[28px]" />
-      <div className="absolute top-4 left-4 rounded-full bg-midnight/80 backdrop-blur px-4 py-1.5 font-caps text-sm tracking-[0.2em] text-gold-light">{m.y}</div>
-      <h3 className="mt-6 font-display text-3xl font-semibold leading-tight">{m.t}</h3>
-      <p className="mt-3 text-slate leading-relaxed">{m.d}</p>
-      <span className="absolute -top-3 right-4 font-display text-[7rem] leading-none text-plum/[0.06] select-none" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+  const cards = (fixedPhoto: boolean) => milestones.map((m) => (
+    <article key={m.y} className={`relative shrink-0 ${fixedPhoto ? 'w-[400px]' : 'w-[82vw] sm:w-[420px] snap-start'}`}>
+      <div className="relative">
+        <Photo name={m.photo} className={`${fixedPhoto ? 'h-[clamp(180px,29vh,280px)]' : 'aspect-[4/3]'} w-full rounded-[28px]`} />
+        <div className="absolute top-4 left-4 rounded-full bg-midnight/80 backdrop-blur px-4 py-1.5 font-caps text-sm tracking-[0.2em] text-gold-light">{m.y}</div>
+      </div>
+      <h3 className="mt-5 font-display text-[1.75rem] sm:text-3xl font-semibold leading-tight">{m.t}</h3>
+      <p className="mt-2 text-slate leading-relaxed">{m.d}</p>
     </article>
   ))
+  const head = (
+    <div className="flex items-end justify-between gap-6">
+      <div className="max-w-3xl"><Eyebrow>Our story</Eyebrow><h2 className="display text-[2.3rem] sm:text-5xl lg:text-6xl mt-3 text-balance">From a dream behind prison walls to a home on Decatur Street.</h2></div>
+      <Link to="/about" className="hidden md:inline-flex shrink-0 items-center gap-2 font-semibold text-plum hover:text-amethyst min-h-[44px]">Full history <ArrowRight size={16} /></Link>
+    </div>
+  )
   if (reduce) {
     return (
-      <section className="bg-parchment py-24"><Container><SectionHeading eyebrow="Our story" title="From a dream behind prison walls to a home on Decatur Street." /><div className="mt-12 grid gap-10 md:grid-cols-2">{cards}</div></Container></section>
+      <section className="bg-parchment py-24" aria-label="Our story"><Container><SectionHeading eyebrow="Our story" title="From a dream behind prison walls to a home on Decatur Street." /><div className="mt-12 grid gap-10 md:grid-cols-2">{cards(false)}</div></Container></section>
+    )
+  }
+  if (!pinned) {
+    return (
+      <section className="bg-parchment py-20 sm:py-24" aria-label="Our story">
+        <Container>{head}<p className="mt-4 font-caps text-[11px] tracking-[0.24em] text-slate">Swipe or scroll sideways</p></Container>
+        <div className="mt-8 flex gap-8 overflow-x-auto snap-x snap-mandatory pb-6 px-4 sm:px-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))]" tabIndex={0} role="group" aria-label="Timeline, scroll sideways">{cards(false)}</div>
+      </section>
     )
   }
   return (
     <section ref={ref} className="relative h-[420vh] bg-parchment" aria-label="Our story">
-      <div className="sticky top-0 h-[100svh] overflow-hidden flex flex-col justify-center">
+      <div className="sticky top-0 h-[100svh] overflow-hidden flex flex-col justify-center pt-16">
         <Container className="w-full">
-          <div className="flex items-end justify-between gap-6">
-            <div className="max-w-2xl"><Eyebrow>Our story</Eyebrow><h2 className="display text-[2.3rem] sm:text-6xl mt-3 text-balance">From a dream behind prison walls to a home on Decatur Street.</h2></div>
-            <Link to="/about" className="hidden md:inline-flex shrink-0 items-center gap-2 font-semibold text-plum hover:text-amethyst min-h-[44px]">Full history <ArrowRight size={16} /></Link>
-          </div>
-          <div className="mt-6 h-[3px] w-full rounded bg-line overflow-hidden"><motion.div style={{ width: bar }} className="h-full bg-gradient-to-r from-amethyst to-gold-bright" /></div>
+          {head}
+          <div className="mt-5 h-[3px] w-full rounded bg-line overflow-hidden"><motion.div style={{ width: bar }} className="h-full bg-gradient-to-r from-amethyst to-gold-bright" /></div>
         </Container>
-        <motion.div ref={track} style={{ x }} className="mt-10 flex gap-8 sm:gap-12 pl-4 sm:pl-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] pr-10">{cards}</motion.div>
+        <motion.div ref={track} style={{ x }} className="mt-8 flex gap-12 pl-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] pr-10">{cards(true)}</motion.div>
       </div>
     </section>
   )
@@ -260,7 +278,7 @@ export function Facts() {
 /* ------------------------------------------------------------------ Ministries mosaic */
 export function MinistriesTeaser() {
   const tiles = [
-    { t: 'Worship & Music', d: 'Choir, musicians and Spirit-filled praise.', photo: 'choir-1', icon: Music, span: 'lg:col-span-2 lg:row-span-2' },
+    { t: 'Worship & Music', d: 'Choir, musicians and Spirit-filled praise.', photo: 'choir-1', icon: Music, span: 'sm:col-span-2 lg:row-span-2' },
     { t: 'Youth & Community Center', d: 'Tutoring, mentoring, trips and summer programs.', photo: 'youth-grads', icon: Sparkles, span: '' },
     { t: 'Outreach & Food Pantry', d: 'Groceries, clothing and neighborhood events.', photo: 'pantry-outdoor', icon: ShoppingBasket, span: '' },
     { t: 'Culinary Arts', d: 'Repasts, fellowship meals and Good Friday fish dinners.', photo: 'community-meal', icon: Utensils, span: '' },
@@ -271,7 +289,7 @@ export function MinistriesTeaser() {
       <Container>
         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <SectionHeading eyebrow="There is a place for you" title="Serving with purpose. Growing in faith." text="Media, transportation, decorating, choir, mentoring, youth: every gift has a home at New Life." />
-          <GoldButton to="/ministries" icon={<ArrowRight size={16} />}>Find your ministry</GoldButton>
+          <div className="lg:justify-self-end"><GoldButton to="/ministries" icon={<ArrowRight size={16} />}>Find your ministry</GoldButton></div>
         </div>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:auto-rows-[260px]">
           {tiles.map((x) => (
@@ -293,7 +311,7 @@ export function MinistriesTeaser() {
 }
 
 /* ------------------------------------------------------------------ Gallery with lightbox */
-const galleryNames = ['worship-full-2', 'praise-dance-1', 'youth-trip', 'teachers-donuts', 'street-naming-2', 'baptism', 'women-ministry', 'firefighters-2', 'community-2', 'musician-keys', 'african-attire-2', 'outreach-team', 'kids-crafts', 'wedding', 'group-outside', 'youth-violin']
+const galleryNames = ['worship-full-2', 'praise-dance-1', 'youth-trip', 'teachers-donuts', 'street-naming-4', 'baptism', 'women-ministry', 'firefighters-2', 'community-2', 'musician-keys', 'african-attire-2', 'outreach-team', 'kids-crafts', 'wedding', 'group-outside', 'youth-violin']
 
 export function Gallery() {
   const [open, setOpen] = useState<number | null>(null)
@@ -340,7 +358,7 @@ export function WatchGive() {
         <article className="relative isolate overflow-hidden rounded-[32px] bg-midnight text-white min-h-[460px] flex flex-col justify-end p-8 sm:p-10 grain">
           <Art name="worship-light" alt="" className="absolute inset-0 -z-10 opacity-70" />
           <div className="absolute inset-0 -z-10 bg-gradient-to-t from-midnight via-midnight/50 to-transparent" />
-          <span className="absolute top-8 left-8 inline-flex items-center gap-2 rounded-full bg-[#C2253D] px-3 py-1 text-xs font-bold tracking-wider">LIVE SUNDAYS 9:45 AM</span>
+          <span className="self-start mb-5 inline-flex items-center gap-2 rounded-full bg-[#C2253D] px-3 py-1 text-xs font-bold tracking-wider">LIVE SUNDAYS 9:45 AM</span>
           <Eyebrow light>Watch</Eyebrow>
           <h3 className="display text-5xl mt-3">Worship with us from anywhere.</h3>
           <p className="mt-3 text-white/75 max-w-md">Services stream on Facebook. Follow New Life so you never miss a message.</p>

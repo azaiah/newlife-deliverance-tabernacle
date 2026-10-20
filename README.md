@@ -16,9 +16,17 @@ npm run build      # type-checks, then builds to dist/
 
 **Commit the downloaded photos to GitHub** after the first successful `npm run dev`. The site then never depends on the old host.
 
+## Responsive behavior and media notes
+
+- **Chain-break scroll film.** `public/video/chain/` holds 72 pre-rendered WebP frames per set (`dNN` desktop, `mNN` portrait/phone). `src/web/home/Freedom.tsx` draws them to a canvas as the visitor scrolls. Reduced-motion users and windows shorter than 520px get a static version.
+- **Pinned scenes fall back gracefully.** `src/web/useFits.ts` turns pinned scroll scenes off on short or narrow windows. The history timeline becomes a native swipe scroller and Freedom becomes a static section, so nothing is cut off at any size.
+- **Photos.** Screenshot borders and phone UI baked into some originals were trimmed in `public/images/church/`. Commit the cleaned files; `npm run photos` skips files that already exist.
+- **Link previews.** The public address lives only in `site.config.json` (`https://newlife-deliverance-tabernacle.netlify.app`). Every page's canonical tag, `og:url`, sitemap and preview image is built from it, and Netlify's hashed deploy addresses redirect to it.
+- Audited at 320, 390, 768, 1008, 1024, 1280, 1512 and 1920 px wide for overlapping text, clipped text, broken images and horizontal overflow.
+
 ## Deploy (Netlify)
 
-1. Put the real address in **`site.config.json`** (it is the only place it lives). It is currently `https://newlife-connect.netlify.app`. Change it to the actual Netlify name or the church's domain **before the first deploy**. Canonical tags, link-preview cards, `sitemap.xml`, `robots.txt` and the structured data all build from it.
+1. Put the real address in **`site.config.json`** (it is the only place it lives). It is currently `https://newlife-deliverance-tabernacle.netlify.app`. Change it to the actual Netlify name or the church's domain **before the first deploy**. Canonical tags, link-preview cards, `sitemap.xml`, `robots.txt` and the structured data all build from it.
 2. Push to GitHub and connect the repo in Netlify. `netlify.toml` already sets the build command, publish folder, per-page preview rewrites and security headers.
 3. Netlify Forms picks up these forms automatically: `nldt-contact`, `nldt-prayer`, `nldt-help`, `nldt-visit`, `nldt-volunteer`. In Netlify, set the form notification emails to the church office.
 

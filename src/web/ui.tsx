@@ -17,11 +17,14 @@ export const art = (name: string, small = false) => `/images/art/${name}${small 
  * The church's real photo, with a branded fallback if the file has not been downloaded yet
  * (so layouts never break). Lazy by default.
  */
+/** Wrapper position: a caller that passes absolute/fixed/sticky must win. Both `relative` and `absolute` in one class list resolves by stylesheet order (relative wins), which collapsed the box to zero height. */
+const anchored = (cls: string) => (/(^|\s)(absolute|fixed|sticky)(\s|$)/.test(cls) ? '' : 'relative')
+
 export function Photo({ name, className = '', imgClassName = '', alt, eager = false, sizes }: { name: string; className?: string; imgClassName?: string; alt?: string; eager?: boolean; sizes?: string }) {
   const [failed, setFailed] = useState(false)
   const src = photoSrc(name)
   return (
-    <div className={`relative overflow-hidden bg-gradient-to-br from-plum via-midnight-2 to-midnight ${className}`}>
+    <div className={`${anchored(className)} overflow-hidden bg-gradient-to-br from-plum via-midnight-2 to-midnight ${className}`}>
       {(!src || failed) ? (
         <div className="absolute inset-0 flex items-center justify-center" role="img" aria-label={alt ?? photoAlt(name)}>
           <div className="absolute inset-0 opacity-60" style={{ background: 'radial-gradient(60% 50% at 50% 40%, rgba(201,162,75,0.28), transparent 70%)' }} />
@@ -37,7 +40,7 @@ export function Photo({ name, className = '', imgClassName = '', alt, eager = fa
 /** Generated art image, responsive (small + large WebP). */
 export function Art({ name, alt, className = '', imgClassName = '', eager = false }: { name: string; alt: string; className?: string; imgClassName?: string; eager?: boolean }) {
   return (
-    <div className={`relative overflow-hidden bg-midnight ${className}`}>
+    <div className={`${anchored(className)} overflow-hidden bg-midnight ${className}`}>
       <img src={art(name)} srcSet={`${art(name, true)} 800w, ${art(name)} 2000w`} sizes="(max-width: 768px) 100vw, 60vw" alt={alt} loading={eager ? 'eager' : 'lazy'} decoding="async" className={`absolute inset-0 h-full w-full object-cover ${imgClassName}`} />
     </div>
   )

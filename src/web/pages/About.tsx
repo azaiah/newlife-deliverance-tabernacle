@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { ChevronDown, Quote, HeartHandshake, Flame, Sprout, Users, ShieldCheck } from 'lucide-react'
 import { useDocumentMeta } from '@/components/useDocumentMeta'
 import { church } from '@/config/site'
-import { PageHero, Container, SectionHeading, Eyebrow, Photo, GoldButton, RoyalButton, SplitWords } from '../ui'
+import { PageHero, art, Container, SectionHeading, Eyebrow, Photo, GoldButton, RoyalButton, SplitWords } from '../ui'
 import { Stagger, item, Parallax } from '../motion'
 import { milestones } from '../home/Sections'
 
@@ -80,9 +80,9 @@ export default function About() {
         <Container className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <div>
             <Eyebrow>Mission</Eyebrow>
-            <div className="relative mt-6">
-              <Quote aria-hidden="true" size={64} className="absolute -left-2 -top-6 text-gold-bright/25" />
-              <p className="relative font-display text-2xl sm:text-3xl leading-snug text-midnight">{church.mission}</p>
+            <div className="mt-6">
+              <Quote aria-hidden="true" size={44} className="mb-3 text-gold-bright/50" />
+              <p className="font-display text-2xl sm:text-3xl leading-snug text-midnight">{church.mission}</p>
             </div>
           </div>
           <div className="grid gap-4">
@@ -119,7 +119,9 @@ export default function About() {
               <SplitWords as="h2" text="Called to lead, equipped to serve, anointed to care." className="display text-[2.6rem] sm:text-6xl mt-4 text-balance" />
               <p className="mt-5 text-lg text-white/75 leading-relaxed">Two pastors, called to the same house, standing side by side. Each brings unique gifts, yet they move in harmony, modeling humility, unity and servant leadership.</p>
             </div>
-            <Photo name="pastors-portrait" className="aspect-[16/10] rounded-[32px] gold-frame" alt="The pastors of New Life Deliverance Tabernacle" />
+            <div className="relative aspect-[3/2] overflow-hidden rounded-[32px] bg-midnight gold-frame">
+              <img src={art('pastors-arch')} srcSet={`${art('pastors-arch', true)} 600w, ${art('pastors-arch')} 970w`} sizes="(max-width: 1024px) 92vw, 560px" alt="The pastors of New Life Deliverance Tabernacle" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
+            </div>
           </div>
         </Container>
       </section>

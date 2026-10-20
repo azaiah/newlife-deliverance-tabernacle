@@ -53,7 +53,7 @@ export default function Events() {
                   <div className="min-w-0">
                     <h3 className="font-display text-2xl sm:text-3xl font-semibold leading-tight group-hover:text-plum">{e.title}</h3>
                     <p className="mt-1 text-sm text-slate flex flex-wrap gap-x-4 gap-y-1"><span className="inline-flex items-center gap-1"><Clock size={14} /> {time12(e.start)} to {time12(e.end)}</span><span className="inline-flex items-center gap-1"><MapPin size={14} /> {state.rooms.find((r) => r.id === e.roomId)?.name}</span></p>
-                    <p className="mt-2 text-slate line-clamp-2">{e.description}</p>
+                    <p className="mt-2 text-slate">{e.description}</p>
                   </div>
                   <span className="hidden sm:inline-flex rounded-full bg-gold-50 border border-gold-bright/40 px-4 py-2 text-sm font-semibold text-gold">{e.registrationOpen ? 'Register' : 'Details'}</span>
                 </motion.button>
