@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion'
+import { createPortal } from 'react-dom'
 import { Menu, X, Phone, MapPin, Clock, Facebook, ArrowUpRight, LogIn, Heart, Navigation } from 'lucide-react'
 import { SiteLogo, Mark, PoweredBy } from '@/components/Logo'
 import { useFocusTrap } from '@/components/useFocusTrap'
@@ -35,7 +36,18 @@ export function SiteHeader() {
     on(); window.addEventListener('scroll', on, { passive: true })
     return () => window.removeEventListener('scroll', on)
   }, [])
-  useEffect(() => { document.documentElement.style.overflow = open ? 'hidden' : ''; return () => { document.documentElement.style.overflow = '' } }, [open])
+  // Steady menu: pin the page in place while it is open (iOS ignores overflow:hidden on html), then restore the exact scroll position.
+  useEffect(() => {
+    if (!open) return
+    const y = window.scrollY
+    const b = document.body.style
+    const prev = { position: b.position, top: b.top, left: b.left, right: b.right, width: b.width }
+    b.position = 'fixed'; b.top = `-${y}px`; b.left = '0'; b.right = '0'; b.width = '100%'
+    return () => {
+      b.position = prev.position; b.top = prev.top; b.left = prev.left; b.right = prev.right; b.width = prev.width
+      window.scrollTo(0, y)
+    }
+  }, [open])
   const light = !scrolled
   return (
     <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? 'bg-linen/85 backdrop-blur-xl shadow-[0_1px_0_rgba(26,15,43,0.08)]' : 'bg-gradient-to-b from-midnight/70 to-transparent'}`}>
@@ -54,10 +66,10 @@ export function SiteHeader() {
           <button type="button" onClick={() => setOpen(true)} className={`xl:hidden tap inline-flex items-center justify-center rounded-full ${light ? 'text-white hover:bg-white/10' : 'text-midnight hover:bg-midnight/5'}`} aria-label="Open menu" aria-expanded={open}><Menu size={26} /></button>
         </div>
       </div>
-      <AnimatePresence>
+      {createPortal(<AnimatePresence>
         {open && (
-          <motion.div ref={ref} role="dialog" aria-modal="true" aria-label="Menu" tabIndex={-1} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }} className="fixed inset-0 z-[90] bg-midnight text-white overflow-y-auto grain">
-            <div className="light-leaks" />
+          <motion.div ref={ref} role="dialog" aria-modal="true" aria-label="Menu" tabIndex={-1} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }} className="fixed inset-0 z-[90] bg-midnight text-white overflow-y-auto overflow-x-hidden overscroll-contain touch-pan-y grain" style={{ WebkitOverflowScrolling: 'touch' }}>
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden"><div className="light-leaks" /></div>
             <div className="relative flex items-center justify-between px-4 sm:px-6 h-20">
               <SiteLogo light />
               <button type="button" onClick={() => setOpen(false)} className="tap inline-flex items-center justify-center rounded-full hover:bg-white/10" aria-label="Close menu"><X size={26} /></button>
@@ -84,7 +96,7 @@ export function SiteHeader() {
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>, document.body)}
     </header>
   )
 }
